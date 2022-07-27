@@ -1,13 +1,13 @@
-package com.tirsa.managementwebapp;
+package com.tirsa.storewebapp;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class ManagementwebappApplicationTests {
+class StorewebappApplicationTests {
 
 	@Test
-	void contextLoads() {
+	public void contextLoads() {
 	}
 
 }

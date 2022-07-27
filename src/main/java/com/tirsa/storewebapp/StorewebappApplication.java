@@ -1,12 +1,13 @@
-package com.tirsa.managementwebapp;
+package com.tirsa.storewebapp;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ManagementwebappApplication {
+public class StorewebappApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(ManagementwebappApplication.class, args);
+        
+		SpringApplication.run(StorewebappApplication.class, args);
 	}
 }
