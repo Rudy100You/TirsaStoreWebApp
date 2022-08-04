@@ -1,5 +1,6 @@
 package com.tirsa.storewebapp.appuser;
 
+import com.tirsa.storewebapp.generics.apiexceptions.ApiForbiddenException;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -30,10 +31,11 @@ public class AppUserService implements UserDetailsService{
     public String signUpUser(AppUser appUser)
     {
         boolean userAlreadyExists = appUserRepository.findByEmail(appUser.getEmail()).isPresent();
+
         if(userAlreadyExists)
             {
                 //throw new IllegalStateException(USER_ALREADY_TAKEN_ERR_MSG);
-                return USER_ALREADY_TAKEN_ERR_MSG;
+                throw new ApiForbiddenException(USER_ALREADY_TAKEN_ERR_MSG);
             }
         String encoded = encoder.encode(appUser.getPassword());
         appUser.setPassword(encoded);
@@ -41,4 +43,7 @@ public class AppUserService implements UserDetailsService{
         appUserRepository.save(appUser);
         return "User registered";
     }
+
+
+
 }

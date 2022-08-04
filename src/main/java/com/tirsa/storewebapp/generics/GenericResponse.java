@@ -12,6 +12,6 @@ import lombok.ToString;
 @EqualsAndHashCode
 @ToString
 public class GenericResponse {
-    private String status;
-    private String Message;
+    private String status;//httpStatus
+    private String Message;//
 }

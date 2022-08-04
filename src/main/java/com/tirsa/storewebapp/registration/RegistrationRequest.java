@@ -1,9 +1,6 @@
 package com.tirsa.storewebapp.registration;
 
-import lombok.AllArgsConstructor;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.ToString;
+import lombok.*;
 
 @Getter
 @AllArgsConstructor
@@ -14,4 +11,10 @@ public class RegistrationRequest {
     private final String lastName;
     private final String email;
     private final String password;
+
+    public boolean isEmpty(){
+        RegistrationRequest aux = new RegistrationRequest(null,null,null,null);
+        return aux.equals(this)?true:false;
+    }
+
 }
